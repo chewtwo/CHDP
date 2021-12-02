@@ -1,0 +1,319 @@
+================================
+70. Climbing Stairs
+Easy
+
+9228
+
+280
+
+Add to List
+
+Share
+You are climbing a staircase. It takes n steps to reach the top.
+
+Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+
+ 
+
+Example 1:
+
+Input: n = 2
+Output: 2
+Explanation: There are two ways to climb to the top.
+1. 1 step + 1 step
+2. 2 steps
+Example 2:
+
+Input: n = 3
+Output: 3
+Explanation: There are three ways to climb to the top.
+1. 1 step + 1 step + 1 step
+2. 1 step + 2 steps
+3. 2 steps + 1 step
+ 
+
+Constraints:
+
+1 <= n <= 45
+Accepted
+1,259,708
+Submissions
+2,508,946
+
+
+Min Cost Climbing Stairs
+Easy
+Fibonacci Number
+Easy
+N-th Tribonacci Number
+Easy
+To reach nth step, what could have been your previous steps? (Think about the step sizes)
+
+
+<Similar Questions>
+Min Cost Climbing Stairs
+Easy
+Fibonacci Number
+Easy
+N-th Tribonacci Number
+Easy
+<Show Hint1>
+To reach nth step, what could have been your previous steps? (Think about the step sizes)
+
+--------------------------------
+en-sbcb
+--------------------------------
+C++
+class Solution {
+public:
+    int climbStairs(int n) {
+        
+    }
+};
+
+Java
+class Solution {
+    public int climbStairs(int n) {
+        
+    }
+}
+
+Python3
+class Solution:
+    def climbStairs(self, n: int) -> int:
+
+--------------------------------
+
+================================
+441. Arranging Coins
+Easy
+
+1759
+
+952
+
+Add to List
+
+Share
+You have n coins and you want to build a staircase with these coins. The staircase consists of k rows where the ith row has exactly i coins. The last row of the staircase may be incomplete.
+
+Given the integer n, return the number of complete rows of the staircase you will build.
+
+ 
+
+Example 1:
+$
+$$
+$$#
+
+Input: n = 5
+Output: 2
+Explanation: Because the 3rd row is incomplete, we return 2.
+Example 2:
+$
+$$
+$$$
+$$##
+
+Input: n = 8
+Output: 3
+Explanation: Because the 4th row is incomplete, we return 3.
+ 
+
+Constraints:
+
+1 <= n <= 231 - 1
+Accepted
+248,050
+Submissions
+554,487
+--------------------------------
+class Solution {
+public:
+    int arrangeCoins(int n) {
+        
+    }
+};
+
+--------------------------------
+
+Approach 1: Binary Search
+Java
+class Solution {
+  public int arrangeCoins(int n) {
+    long left = 0, right = n;
+    long k, curr;
+    while (left <= right) {
+      k = left + (right - left) / 2;
+      curr = k * (k + 1) / 2;
+
+      if (curr == n) return (int)k;
+
+      if (n < curr) {
+        right = k - 1;
+      } else {
+        left = k + 1;
+      }
+    }
+    return (int)right;
+  }
+}
+
+Python3
+class Solution:
+    def arrangeCoins(self, n: int) -> int:
+        left, right = 0, n
+        while left <= right:
+            k = (right + left) // 2
+            curr = k * (k + 1) // 2
+            if curr == n:
+                return k
+            if n < curr:
+                right = k - 1
+            else:
+                left = k + 1
+        return right
+
+Complexity Analysis
+
+Time complexity : \mathcal{O}(\log N)O(logN).
+
+Space complexity : \mathcal{O}(1)O(1). 
+
+Approach 2: Math
+
+Java
+class Solution {
+  public int arrangeCoins(int n) {
+    return (int)(Math.sqrt(2 * (long)n + 0.25) - 0.5);
+  }
+}
+
+Python3
+class Solution:
+    def arrangeCoins(self, n: int) -> int:
+        return (int)((2 * n + 0.25)**0.5 - 0.5)
+
+
+Complexity Analysis
+
+Time complexity : \mathcal{O}(1)O(1).
+
+Space complexity : \mathcal{O}(1)O(1). 
+
+--------------------------------
+方法一：二分查找
+Python3
+class Solution:
+    def arrangeCoins(self, n: int) -> int:
+        left, right = 1, n
+        while left < right:
+            mid = (left + right + 1) // 2
+            if mid * (mid + 1) <= 2 * n:
+                left = mid
+            else:
+                right = mid - 1
+        return left
+
+Java
+class Solution {
+    public int arrangeCoins(int n) {
+        int left = 1, right = n;
+        while (left < right) {
+            int mid = (right - left + 1) / 2 + left;
+            if ((long) mid * (mid + 1) <= (long) 2 * n) {
+                left = mid;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return left;
+    }
+}
+
+C#
+public class Solution {
+    public int ArrangeCoins(int n) {
+        int left = 1, right = n;
+        while (left < right) {
+            int mid = (right - left + 1) / 2 + left;
+            if ((long) mid * (mid + 1) <= (long) 2 * n) {
+                left = mid;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return left;
+    }
+}
+
+JavaScript
+var arrangeCoins = function(n) {
+    let left = 1, right = n;
+    while (left < right) {
+        const mid = Math.floor((right - left + 1) / 2) + left;
+        if (mid * (mid + 1) <= 2 * n) {
+            left = mid;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return left;
+};
+
+C++
+class Solution {
+public:
+    int arrangeCoins(int n) {
+        int left = 1, right = n;
+        while (left < right) {
+            int mid = (right - left + 1) / 2 + left;
+            if ((long long) mid * (mid + 1) <= (long long) 2 * n) {
+                left = mid;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return left;
+    }
+};
+
+作者：LeetCode-Solution
+链接：https://leetcode-cn.com/problems/arranging-coins/solution/pai-lie-ying-bi-by-leetcode-solution-w52c/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+Golang
+func arrangeCoins(n int) int {
+    return sort.Search(n, func(k int) bool { k++; return k*(k+1) > 2*n })
+}
+
+复杂度分析
+
+时间复杂度：O(\log n)O(logn)。
+
+空间复杂度：O(1)O(1)。
+
+方法二：数学
+复杂度分析
+
+代码中使用的 \texttt{pow}pow 函数的时空复杂度与 CPU 支持的指令集相关，这里不深入分析。
+
+================================
+
+
+
+rule
+--------
+en lock
+------
+xxx
+--------
+cn open
+------
+xxx
+--------
+
+
+================================
+--------------------------------
