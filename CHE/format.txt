@@ -1,86 +1,104 @@
-70 441 107 957
+day1 find solution, lten->ltcn->gfg->plq
+day2 review, check gfg
+day4 check plq hints,constraints,compare Tn Sn
+day8 Assert template（归档） compare solutions
+day15 other languages than top3
+day29 questions/template, 2nd round
 
-Easy
+if en find, attach cn later..
+
+4. 202 283 122 876 844 525 678 560 221
+5. 278 771 387 169 733 208 918 328 567 230 986 525 973
+6. 468 287
+7. 441 78 100 347 210 258
+
+Hard
 *****************************************************************************************************
-#70 Climbing Stairs
+#996 Cathy Lluvia
 *****************************************************************************************************
-You are climbing a staircase. It takes n steps to reach the top.
-Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+
+
 
 ************************
 * Examples             *
 ************************
 Example 1:
-Input: n = 2
-Output: 2
-Explanation: There are two ways to climb to the top.
-1. 1 step + 1 step
-2. 2 steps
+xxx
 
 --------------------------------
 Example 2:
-Input: n = 3
-Output: 3
-Explanation: There are three ways to climb to the top.
-1. 1 step + 1 step + 1 step
-2. 1 step + 2 steps
-3. 2 steps + 1 step
+xxx
 
 ************************
 * Constraints          *
 ************************
-1 <= n <= 45
+empty / no prefix num
 
 ************************
 * Similar Questions    *
 ************************
-Min Cost Climbing Stairs
-Easy
-Fibonacci Number
-Easy
-N-th Tribonacci Number
-Easy
+empty
+xxx
 
 ************************
 * Hints                *
 ************************
-To reach nth step, what could have been your previous steps? (Think about the step sizes)
+empty / no prefix num
 
 ************************
 * Templates            *
 ************************
 c++
 ----------------
-class Solution {
-public:
-    int climbStairs(int n) {
-        
-    }
-};
+xxx
 --------------------------------
 java
 ----------------
-class Solution {
-    public int climbStairs(int n) {
-        
-    }
-}
+xxx
 --------------------------------
 python3
 ----------------
-class Solution:
-    def climbStairs(self, n: int) -> int:
-
+xxx
 
 ************************
 * Solutions            *
 ************************
+en open
+en lock
 en sbcb
+en empty
 --------------------------------
-Approach 1: cl
+Approach 1: DFS
+----------------
+c++
+--------
+code xxx
+----------------
+java
+--------
+code yyy
+----------------
+Complexity Analysis
+Time complexity: O(logN).
+Space complexity: O(1). 
+--------------------------------
+Approach 2: BFS
+----------------
+c++
+--------
+code xxx
+----------------
+java
+--------
+code yyy
+----------------
+Complexity Analysis
+Time complexity: O(logN).
+Space complexity: O(1).
 
 ================================
 cn open
+cn empty
 --------------------------------
 Approach 1: DFS
 ----------------
@@ -112,5 +130,4 @@ Space complexity: O(1).
 
 ================================
 
-
-
+next hard
